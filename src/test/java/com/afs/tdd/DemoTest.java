@@ -99,7 +99,7 @@ class DemoTest {
 
     }
     @Test
-    void should_return_Ewhen_executeCommand_given_00S_L() {
+    void should_return_E_when_executeCommand_given_00S_L() {
         //given
         MarsRover marsRover = new MarsRover(0,0,"S");
         //when
@@ -109,6 +109,19 @@ class DemoTest {
         assertEquals(0,marsRover.getLocationX());
         assertEquals(0,marsRover.getLocationY());
         assertEquals("E",marsRover.getDirection());
+
+    }
+    @Test
+    void should_return_W_when_executeCommand_given_00S_R() {
+        //given
+        MarsRover marsRover = new MarsRover(0,0,"S");
+        //when
+        marsRover.executeCommands("R");
+
+        //then
+        assertEquals(0,marsRover.getLocationX());
+        assertEquals(0,marsRover.getLocationY());
+        assertEquals("W",marsRover.getDirection());
 
     }
     @Test
@@ -122,6 +135,19 @@ class DemoTest {
         assertEquals(-1,marsRover.getLocationX());
         assertEquals(0,marsRover.getLocationY());
         assertEquals("W",marsRover.getDirection());
+
+    }
+    @Test
+    void should_return_N_when_executeCommand_given_00W_R() {
+        //given
+        MarsRover marsRover = new MarsRover(0,0,"W");
+        //when
+        marsRover.executeCommands("R");
+
+        //then
+        assertEquals(0,marsRover.getLocationX());
+        assertEquals(0,marsRover.getLocationY());
+        assertEquals("N",marsRover.getDirection());
 
     }
 }
