@@ -1,5 +1,6 @@
 package com.afs.tdd;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,7 +17,7 @@ public class MarsRover {
     }
 
     public void executeCommands(String commands) {
-        executeEachCommand(commands);
+        Arrays.asList(commands.split("")).forEach(cmd -> executeEachCommand(cmd));
     }
 
     public void executeEachCommand(String command) {
