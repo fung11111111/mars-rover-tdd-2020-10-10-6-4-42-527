@@ -151,16 +151,17 @@ class DemoTest {
 
     }
     @Test
-    void should_return_S_when_executeCommand_given_00W_L() {
+    void should_return_negative11N_when_executeCommand_given_00N_MLMR() {
         //given
-        MarsRover marsRover = new MarsRover(0,0,"W");
+        MarsRover marsRover = new MarsRover(0,0,"N");
         //when
-        marsRover.executeCommands("L");
+        marsRover.executeCommands("MLMR");
 
         //then
-        assertEquals(0,marsRover.getLocationX());
-        assertEquals(0,marsRover.getLocationY());
-        assertEquals("S",marsRover.getDirection());
+        assertEquals(-1,marsRover.getLocationX());
+        assertEquals(1,marsRover.getLocationY());
+        assertEquals("N",marsRover.getDirection());
 
     }
+
 }
