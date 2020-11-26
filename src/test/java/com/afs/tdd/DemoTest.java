@@ -60,6 +60,19 @@ class DemoTest {
 
     }
     @Test
+    void should_return_N_when_executeCommand_given_00E_L() {
+        //given
+        MarsRover marsRover = new MarsRover(0,0,"E");
+        //when
+        marsRover.executeCommands("L");
+
+        //then
+        assertEquals(0,marsRover.getLocationX());
+        assertEquals(0,marsRover.getLocationY());
+        assertEquals("N",marsRover.getDirection());
+
+    }
+    @Test
     void should_return_x_plus_1_when_executeCommand_given_00E_M() {
         //given
         MarsRover marsRover = new MarsRover(0,0,"E");
