@@ -28,6 +28,8 @@ public class MarsRover {
             direction = "E";
         }else if (commands == "R" && direction == "E"){
             direction = "S";
+        }else if (commands == "L" && direction == "E"){
+            direction = "N";
         }
     }
 
