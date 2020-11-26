@@ -21,6 +21,10 @@ public class MarsRover {
         }else if (commands == "M" && direction == "W"){
             locationX -= 1;
         }
+
+        if(commands == "L" && direction == "N"){
+            direction = "W";
+        }
     }
 
     public void moveForward(){
