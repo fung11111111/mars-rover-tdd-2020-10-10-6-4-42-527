@@ -28,8 +28,8 @@ class DemoTest {
         marsRover.executeCommands("M");
 
         //then
-        assertEquals(0,marsRover.getLocationX());
-        assertEquals(1,marsRover.getLocationY());
+        assertEquals(1,marsRover.getLocationX());
+        assertEquals(0,marsRover.getLocationY());
         assertEquals("N",marsRover.getDirection());
 
     }
