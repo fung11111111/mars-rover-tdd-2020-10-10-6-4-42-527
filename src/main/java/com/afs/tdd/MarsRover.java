@@ -17,9 +17,6 @@ public class MarsRover {
         }
     }
 
-    public void splitCommands(String commands){
-
-    }
     public int getLocationX() {
         return locationX;
     }
