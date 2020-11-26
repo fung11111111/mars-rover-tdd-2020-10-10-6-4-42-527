@@ -14,6 +14,8 @@ public class MarsRover {
     public void executeCommands(String commands){
         if(commands == "M" && direction == "N"){
             locationY += 1;
+        }else if (commands == "M" && direction == "E"){
+            locationX += 1;
         }
     }
 
