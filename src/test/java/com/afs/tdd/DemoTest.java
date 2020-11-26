@@ -49,7 +49,7 @@ class DemoTest {
     @Test
     void should_return_S_when_executeCommand_given_00E_R() {
         //given
-        MarsRover marsRover = new MarsRover(0,0,"N");
+        MarsRover marsRover = new MarsRover(0,0,"E");
         //when
         marsRover.executeCommands("R");
 
