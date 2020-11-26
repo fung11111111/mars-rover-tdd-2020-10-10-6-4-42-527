@@ -1,53 +1,84 @@
 package com.afs.tdd;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MarsRover {
-    private int locationX;
-    private int locationY;
-    private String direction;
+    public static final String DIRECTION_NORTH = "N";
+    public static final String DIRECTION_EAST = "E";
+    public static final String DIRECTION_WEST = "W";
+    public static final String DIRECTION_SOUTH = "S";
+    private Location location;
 
     public MarsRover(int locationX, int locationY, String direction) {
-        this.locationX = locationX;
-        this.locationY = locationY;
-        this.direction = direction;
+        location = new Location(locationX, locationY, direction);
+
     }
 
-    public void executeCommands(String commands){
-        if(commands == "M" && direction == "N"){
-            locationY += 1;
-        }else if (commands == "M" && direction == "E"){
-            locationX += 1;
-        }else if (commands == "M" && direction == "S"){
-            locationY -= 1;
-        }else if (commands == "M" && direction == "W"){
-            locationX -= 1;
-        }
+    public void executeCommands(String commands) {
+        executeEachCommand(commands);
+    }
 
-        if(commands == "L" && direction == "N"){
-            direction = "W";
-        }else if (commands == "R" && direction == "N"){
-            direction = "E";
-        }else if (commands == "R" && direction == "E"){
-            direction = "S";
-        }else if (commands == "L" && direction == "E"){
-            direction = "N";
+    public void executeEachCommand(String command) {
+        if (command.equals("M")) {
+            this.moveForward();
+        } else {
+            this.changeDirection(command);
         }
     }
 
-    public void moveForward(){
-
+    public void changeDirection(String changeDirection) {
+        if(changeDirection.equals("L")){
+            turnLeft();
+        }else{
+            turnRight();
+        }
     }
-    public void moveBackword(){
-
+    public void turnLeft(){
+        if(location.getDirection().equals(DIRECTION_NORTH)){
+            location.setDirection(DIRECTION_WEST);
+        }else if(location.getDirection().equals(DIRECTION_WEST)){
+            location.setDirection(DIRECTION_SOUTH);
+        }else if(location.getDirection().equals(DIRECTION_SOUTH)){
+            location.setDirection(DIRECTION_EAST);
+        }else{
+            location.setDirection(DIRECTION_NORTH);
+        }
     }
+    public void turnRight(){
+        if(location.getDirection().equals(DIRECTION_NORTH)){
+            location.setDirection(DIRECTION_EAST);
+        }else if(location.getDirection().equals("W")){
+            location.setDirection(DIRECTION_NORTH);
+        }else if(location.getDirection().equals(DIRECTION_SOUTH)){
+            location.setDirection(DIRECTION_WEST);
+        }else{
+            location.setDirection(DIRECTION_SOUTH);
+        }
+    }
+
+
+    public void moveForward() {
+        if(location.getDirection().equals(DIRECTION_NORTH)){
+            location.addLocationY(1);
+        }else if(location.getDirection().equals(DIRECTION_WEST)){
+            location.addLocationX(-1);
+        }else if(location.getDirection().equals(DIRECTION_SOUTH)){
+            location.addLocationY(-1);
+        }else{
+            location.addLocationX(1);
+        }
+    }
+
     public int getLocationX() {
-        return locationX;
+        return location.getLocationX();
     }
 
     public int getLocationY() {
-        return locationY;
+        return location.getLocationY();
     }
 
     public String getDirection() {
-        return direction;
+        return location.getDirection();
     }
 }
