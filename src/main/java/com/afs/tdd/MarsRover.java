@@ -23,6 +23,12 @@ public class MarsRover {
         }
     }
 
+    public void moveForward(){
+
+    }
+    public void moveBackword(){
+
+    }
     public int getLocationX() {
         return locationX;
     }
