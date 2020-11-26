@@ -16,6 +16,8 @@ public class MarsRover {
             locationY += 1;
         }else if (commands == "M" && direction == "E"){
             locationX += 1;
+        }else if (commands == "M" && direction == "S"){
+            locationY -= 1;
         }
     }
 
