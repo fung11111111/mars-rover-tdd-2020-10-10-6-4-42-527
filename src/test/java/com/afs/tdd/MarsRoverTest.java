@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-// rename demo
 class MarsRoverTest {
 
     @Test
@@ -175,9 +174,9 @@ class MarsRoverTest {
 
     }
 
-    // rename method
+
     @Test
-    void should_return_negative11N_when_executeCommand_given_00N_MLMR() {
+    void should_return_minus11N_when_executeCommand_given_00N_MLMR() {
         //given
         MarsRover marsRover = new MarsRover(0, 0, "N");
         //when
