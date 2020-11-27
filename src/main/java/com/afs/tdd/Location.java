@@ -1,6 +1,5 @@
 package com.afs.tdd;
 
-import java.util.Map;
 
 public class Location {
     private int locationX;
@@ -12,6 +11,7 @@ public class Location {
         this.locationY = locationY;
         this.direction = direction;
     }
+// rename method and add locationx before pass in
     public void addLocationX(int locationX) {
         this.locationX += locationX;
     }

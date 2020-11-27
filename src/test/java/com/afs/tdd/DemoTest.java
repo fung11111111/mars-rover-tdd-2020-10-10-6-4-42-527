@@ -5,7 +5,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class DemoTest {
+// rename demo
+class MarsRoverTest {
 
     @Test
     void should_return_y_plus_1_when_executeCommand_given_00N_M() {
@@ -160,7 +161,21 @@ class DemoTest {
         assertEquals("N", marsRover.getDirection());
 
     }
+    @Test
+    void should_return_N_when_executeCommand_given_00W_L() {
+        //given
+        MarsRover marsRover = new MarsRover(0, 0, "W");
+        //when
+        marsRover.executeCommands("L");
 
+        //then
+        assertEquals(0, marsRover.getLocationX());
+        assertEquals(0, marsRover.getLocationY());
+        assertEquals("S", marsRover.getDirection());
+
+    }
+
+    // rename method
     @Test
     void should_return_negative11N_when_executeCommand_given_00N_MLMR() {
         //given

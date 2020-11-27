@@ -5,10 +5,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MarsRover {
+
+    // add new constant class
     public static final String DIRECTION_NORTH = "N";
     public static final String DIRECTION_EAST = "E";
     public static final String DIRECTION_WEST = "W";
     public static final String DIRECTION_SOUTH = "S";
+    public static final String COMMAND_MOVE = "M";
+    public static final String COMMAND_LEFT = "L";
+    public static final String COMMAND_RIGHT = "R";
     private Location location;
 
     public MarsRover(int locationX, int locationY, String direction) {
@@ -20,7 +25,7 @@ public class MarsRover {
     }
 
     public void executeEachCommand(String command) {
-        if (command.equals("M")) {
+        if (command.equals(COMMAND_MOVE)) {
             this.moveForward();
         } else {
             this.changeDirection(command);
@@ -28,9 +33,9 @@ public class MarsRover {
     }
 
     public void changeDirection(String changeDirection) {
-        if (changeDirection.equals("L")) {
+        if (changeDirection.equals(COMMAND_LEFT)) {
             turnLeft();
-        } else {
+        } else if (changeDirection.equals(COMMAND_RIGHT)){
             turnRight();
         }
     }
@@ -50,7 +55,7 @@ public class MarsRover {
     public void turnRight() {
         if (location.getDirection().equals(DIRECTION_NORTH)) {
             location.setDirection(DIRECTION_EAST);
-        } else if (location.getDirection().equals("W")) {
+        } else if (location.getDirection().equals(DIRECTION_WEST)) {
             location.setDirection(DIRECTION_NORTH);
         } else if (location.getDirection().equals(DIRECTION_SOUTH)) {
             location.setDirection(DIRECTION_WEST);
