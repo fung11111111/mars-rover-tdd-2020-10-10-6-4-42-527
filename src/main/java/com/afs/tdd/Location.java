@@ -12,12 +12,12 @@ public class Location {
         this.direction = direction;
     }
 // rename method and add locationx before pass in
-    public void addLocationX(int locationX) {
-        this.locationX += locationX;
+    public void setLocationX(int locationX) {
+        this.locationX = locationX;
     }
 
-    public void addLocationY(int locationY) {
-        this.locationY += locationY;
+    public void setLocationY(int locationY) {
+        this.locationY = locationY;
     }
 
     public void setDirection(String direction) {

@@ -6,14 +6,6 @@ import java.util.Map;
 
 public class MarsRover {
 
-    // add new constant class
-    public static final String DIRECTION_NORTH = "N";
-    public static final String DIRECTION_EAST = "E";
-    public static final String DIRECTION_WEST = "W";
-    public static final String DIRECTION_SOUTH = "S";
-    public static final String COMMAND_MOVE = "M";
-    public static final String COMMAND_LEFT = "L";
-    public static final String COMMAND_RIGHT = "R";
     private Location location;
 
     public MarsRover(int locationX, int locationY, String direction) {
@@ -25,7 +17,7 @@ public class MarsRover {
     }
 
     public void executeEachCommand(String command) {
-        if (command.equals(COMMAND_MOVE)) {
+        if (command.equals(MarsRoverConstant.COMMAND_MOVE)) {
             this.moveForward();
         } else {
             this.changeDirection(command);
@@ -33,47 +25,47 @@ public class MarsRover {
     }
 
     public void changeDirection(String changeDirection) {
-        if (changeDirection.equals(COMMAND_LEFT)) {
+        if (changeDirection.equals(MarsRoverConstant.COMMAND_LEFT)) {
             turnLeft();
-        } else if (changeDirection.equals(COMMAND_RIGHT)){
+        } else if (changeDirection.equals(MarsRoverConstant.COMMAND_RIGHT)){
             turnRight();
         }
     }
 
     public void turnLeft() {
-        if (location.getDirection().equals(DIRECTION_NORTH)) {
-            location.setDirection(DIRECTION_WEST);
-        } else if (location.getDirection().equals(DIRECTION_WEST)) {
-            location.setDirection(DIRECTION_SOUTH);
-        } else if (location.getDirection().equals(DIRECTION_SOUTH)) {
-            location.setDirection(DIRECTION_EAST);
+        if (location.getDirection().equals(MarsRoverConstant.DIRECTION_NORTH)) {
+            location.setDirection(MarsRoverConstant.DIRECTION_WEST);
+        } else if (location.getDirection().equals(MarsRoverConstant.DIRECTION_WEST)) {
+            location.setDirection(MarsRoverConstant.DIRECTION_SOUTH);
+        } else if (location.getDirection().equals(MarsRoverConstant.DIRECTION_SOUTH)) {
+            location.setDirection(MarsRoverConstant.DIRECTION_EAST);
         } else {
-            location.setDirection(DIRECTION_NORTH);
+            location.setDirection(MarsRoverConstant.DIRECTION_NORTH);
         }
     }
 
     public void turnRight() {
-        if (location.getDirection().equals(DIRECTION_NORTH)) {
-            location.setDirection(DIRECTION_EAST);
-        } else if (location.getDirection().equals(DIRECTION_WEST)) {
-            location.setDirection(DIRECTION_NORTH);
-        } else if (location.getDirection().equals(DIRECTION_SOUTH)) {
-            location.setDirection(DIRECTION_WEST);
+        if (location.getDirection().equals(MarsRoverConstant.DIRECTION_NORTH)) {
+            location.setDirection(MarsRoverConstant.DIRECTION_EAST);
+        } else if (location.getDirection().equals(MarsRoverConstant.DIRECTION_WEST)) {
+            location.setDirection(MarsRoverConstant.DIRECTION_NORTH);
+        } else if (location.getDirection().equals(MarsRoverConstant.DIRECTION_SOUTH)) {
+            location.setDirection(MarsRoverConstant.DIRECTION_WEST);
         } else {
-            location.setDirection(DIRECTION_SOUTH);
+            location.setDirection(MarsRoverConstant.DIRECTION_SOUTH);
         }
     }
 
 
     public void moveForward() {
-        if (location.getDirection().equals(DIRECTION_NORTH)) {
-            location.addLocationY(1);
-        } else if (location.getDirection().equals(DIRECTION_WEST)) {
-            location.addLocationX(-1);
-        } else if (location.getDirection().equals(DIRECTION_SOUTH)) {
-            location.addLocationY(-1);
+        if (location.getDirection().equals(MarsRoverConstant.DIRECTION_NORTH)) {
+            location.setLocationY(location.getLocationY()+1);
+        } else if (location.getDirection().equals(MarsRoverConstant.DIRECTION_WEST)) {
+            location.setLocationX(location.getLocationX()-1);
+        } else if (location.getDirection().equals(MarsRoverConstant.DIRECTION_SOUTH)) {
+            location.setLocationY(location.getLocationY()-1);
         } else {
-            location.addLocationX(1);
+            location.setLocationX(location.getLocationX()+1);
         }
     }
 
