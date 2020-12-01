@@ -31,15 +31,7 @@ public class MarsRover {
 
 
     public void moveForward() {
-        if (location.getDirection().equals(Direction.NORTH)) {
-            location.setLocationY(location.getLocationY() + 1);
-        } else if (location.getDirection().equals(Direction.WEST)) {
-            location.setLocationX(location.getLocationX() - 1);
-        } else if (location.getDirection().equals(Direction.SOUTH)) {
-            location.setLocationY(location.getLocationY() - 1);
-        } else {
-            location.setLocationX(location.getLocationX() + 1);
-        }
+       location.moveForward();
     }
 
     public int getLocationX() {
