@@ -1,9 +1,8 @@
 package com.afs.tdd;
 
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+
 
 class MarsRoverTest {
 
@@ -21,7 +20,6 @@ class MarsRoverTest {
         assertEquals(0, marsRover.getLocationX());
         assertEquals(1, marsRover.getLocationY());
         assertEquals(Direction.NORTH, marsRover.getDirection());
-
     }
 
     @Test
@@ -29,6 +27,7 @@ class MarsRoverTest {
         //given
         MarsRover marsRover = new MarsRover(0, 0, Direction.NORTH);
         Invoker invoker = new Invoker(marsRover);
+
         //when
         invoker.receiveCommand(MarsRoverConstant.COMMAND_LEFT);
         invoker.execute();
@@ -37,7 +36,6 @@ class MarsRoverTest {
         assertEquals(0, marsRover.getLocationX());
         assertEquals(0, marsRover.getLocationY());
         assertEquals(Direction.WEST, marsRover.getDirection());
-
     }
 
     @Test
@@ -45,6 +43,7 @@ class MarsRoverTest {
         //given
         MarsRover marsRover = new MarsRover(0, 0, Direction.NORTH);
         Invoker invoker = new Invoker(marsRover);
+
         //when
         invoker.receiveCommand(MarsRoverConstant.COMMAND_RIGHT);
         invoker.execute();
@@ -53,7 +52,6 @@ class MarsRoverTest {
         assertEquals(0, marsRover.getLocationX());
         assertEquals(0, marsRover.getLocationY());
         assertEquals(Direction.EAST, marsRover.getDirection());
-
     }
 
     @Test
@@ -61,6 +59,7 @@ class MarsRoverTest {
         //given
         MarsRover marsRover = new MarsRover(0, 0, Direction.EAST);
         Invoker invoker = new Invoker(marsRover);
+
         //when
         invoker.receiveCommand(MarsRoverConstant.COMMAND_RIGHT);
         invoker.execute();
@@ -76,6 +75,7 @@ class MarsRoverTest {
         //given
         MarsRover marsRover = new MarsRover(0, 0, Direction.EAST);
         Invoker invoker = new Invoker(marsRover);
+
         //when
         invoker.receiveCommand(MarsRoverConstant.COMMAND_LEFT);
         invoker.execute();
@@ -91,6 +91,7 @@ class MarsRoverTest {
         //given
         MarsRover marsRover = new MarsRover(0, 0, Direction.EAST);
         Invoker invoker = new Invoker(marsRover);
+
         //when
         invoker.receiveCommand(MarsRoverConstant.COMMAND_MOVE);
         invoker.execute();
@@ -99,7 +100,6 @@ class MarsRoverTest {
         assertEquals(1, marsRover.getLocationX());
         assertEquals(0, marsRover.getLocationY());
         assertEquals(Direction.EAST, marsRover.getDirection());
-
     }
 
     @Test
@@ -107,6 +107,7 @@ class MarsRoverTest {
         //given
         MarsRover marsRover = new MarsRover(0, 0, Direction.SOUTH);
         Invoker invoker = new Invoker(marsRover);
+
         //when
         invoker.receiveCommand(MarsRoverConstant.COMMAND_MOVE);
         invoker.execute();
@@ -122,6 +123,7 @@ class MarsRoverTest {
         //given
         MarsRover marsRover = new MarsRover(0, 0, Direction.SOUTH);
         Invoker invoker = new Invoker(marsRover);
+
         //when
         invoker.receiveCommand(MarsRoverConstant.COMMAND_LEFT);
         invoker.execute();
@@ -137,6 +139,7 @@ class MarsRoverTest {
         //given
         MarsRover marsRover = new MarsRover(0, 0, Direction.SOUTH);
         Invoker invoker = new Invoker(marsRover);
+
         //when
         invoker.receiveCommand(MarsRoverConstant.COMMAND_RIGHT);
         invoker.execute();
@@ -145,7 +148,6 @@ class MarsRoverTest {
         assertEquals(0, marsRover.getLocationX());
         assertEquals(0, marsRover.getLocationY());
         assertEquals(Direction.WEST, marsRover.getDirection());
-
     }
 
     @Test
@@ -153,6 +155,7 @@ class MarsRoverTest {
         //given
         MarsRover marsRover = new MarsRover(0, 0, Direction.WEST);
         Invoker invoker = new Invoker(marsRover);
+
         //when
         invoker.receiveCommand(MarsRoverConstant.COMMAND_MOVE);
         invoker.execute();
@@ -168,6 +171,7 @@ class MarsRoverTest {
         //given
         MarsRover marsRover = new MarsRover(0, 0, Direction.WEST);
         Invoker invoker = new Invoker(marsRover);
+
         //when
         invoker.receiveCommand(MarsRoverConstant.COMMAND_RIGHT);
         invoker.execute();
@@ -183,6 +187,7 @@ class MarsRoverTest {
         //given
         MarsRover marsRover = new MarsRover(0, 0, Direction.WEST);
         Invoker invoker = new Invoker(marsRover);
+
         //when
         invoker.receiveCommand(MarsRoverConstant.COMMAND_LEFT);
         invoker.execute();
