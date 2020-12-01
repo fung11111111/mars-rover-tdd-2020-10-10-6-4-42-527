@@ -149,11 +149,11 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_return_x_minus_1_when_executeCommand_given_00W_M() {
+    void should_return_x_minus_1_when_invoker_execute_given_invoker_marsrover_00W_M() {
         //given
         MarsRover marsRover = new MarsRover(0, 0, Direction.WEST);
-        //when
         Invoker invoker = new Invoker(marsRover);
+        //when
         invoker.receiveCommand(MarsRoverConstant.COMMAND_MOVE);
         invoker.execute();
 
@@ -161,22 +161,23 @@ class MarsRoverTest {
         assertEquals(-1, marsRover.getLocationX());
         assertEquals(0, marsRover.getLocationY());
         assertEquals(Direction.WEST, marsRover.getDirection());
-
     }
-//
-//    @Test
-//    void should_return_N_when_executeCommand_given_00W_R() {
-//        //given
-//        MarsRover marsRover = new MarsRover(0, 0, Direction.WEST);
-//        //when
-//        marsRover.executeCommands("R");
-//
-//        //then
-//        assertEquals(0, marsRover.getLocationX());
-//        assertEquals(0, marsRover.getLocationY());
-//        assertEquals(Direction.NORTH, marsRover.getDirection());
-//
-//    }
+
+    @Test
+    void should_return_N_when_invoker_execute_given_invoker_marsrover_00W_R() {
+        //given
+        MarsRover marsRover = new MarsRover(0, 0, Direction.WEST);
+        Invoker invoker = new Invoker(marsRover);
+        //when
+        invoker.receiveCommand(MarsRoverConstant.COMMAND_RIGHT);
+        invoker.execute();
+
+        //then
+        assertEquals(0, marsRover.getLocationX());
+        assertEquals(0, marsRover.getLocationY());
+        assertEquals(Direction.NORTH, marsRover.getDirection());
+    }
+
 //    @Test
 //    void should_return_N_when_executeCommand_given_00W_L() {
 //        //given
