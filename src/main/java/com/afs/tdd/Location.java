@@ -4,8 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Location {
-    public static final int MOVEFORWARD = 1;
-    public static final int MOVEBACKWORD = -1;
     private int locationX;
     private int locationY;
     private Direction direction;
@@ -14,14 +12,6 @@ public class Location {
         this.locationX = locationX;
         this.locationY = locationY;
         this.direction = direction;
-    }
-
-    public void setLocationX(int locationX) {
-        this.locationX = locationX;
-    }
-
-    public void setLocationY(int locationY) {
-        this.locationY = locationY;
     }
 
     public void setDirection(Direction direction) {
@@ -74,8 +64,8 @@ public class Location {
         Map<Direction, Runnable> moveForwardMap = new HashMap<>();
         moveForwardMap.put(Direction.EAST, () -> this.locationX++);
         moveForwardMap.put(Direction.WEST, () -> this.locationX--);
-        moveForwardMap.put(Direction.SOUTH, ()-> this.locationY--);
-        moveForwardMap.put(Direction.NORTH, ()-> this.locationY++);
+        moveForwardMap.put(Direction.SOUTH, () -> this.locationY--);
+        moveForwardMap.put(Direction.NORTH, () -> this.locationY++);
         return moveForwardMap;
     }
 }
