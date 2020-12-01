@@ -23,35 +23,12 @@ public class MarsRover {
 
     public void changeDirection(String changeDirection) {
         if (changeDirection.equals(MarsRoverConstant.COMMAND_LEFT)) {
-            turnLeft();
+            location.turnLeft();
         } else if (changeDirection.equals(MarsRoverConstant.COMMAND_RIGHT)) {
-            turnRight();
+            location.turnRight();
         }
     }
 
-    public void turnLeft() {
-        if (location.getDirection().equals(Direction.NORTH)) {
-            location.setDirection(Direction.WEST);
-        } else if (location.getDirection().equals(Direction.WEST)) {
-            location.setDirection(Direction.SOUTH);
-        } else if (location.getDirection().equals(Direction.SOUTH)) {
-            location.setDirection(Direction.EAST);
-        } else {
-            location.setDirection(Direction.NORTH);
-        }
-    }
-
-    public void turnRight() {
-        if (location.getDirection().equals(Direction.NORTH)) {
-            location.setDirection(Direction.EAST);
-        } else if (location.getDirection().equals(Direction.WEST)) {
-            location.setDirection(Direction.NORTH);
-        } else if (location.getDirection().equals(Direction.SOUTH)){
-            location.setDirection(Direction.WEST);
-        } else {
-            location.setDirection(Direction.SOUTH);
-        }
-    }
 
     public void moveForward() {
         if (location.getDirection().equals(Direction.NORTH)) {
