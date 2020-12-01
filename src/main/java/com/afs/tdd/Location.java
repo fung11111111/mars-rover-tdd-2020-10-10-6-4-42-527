@@ -14,10 +14,6 @@ public class Location {
         this.direction = direction;
     }
 
-    public void setDirection(Direction direction) {
-        this.direction = direction;
-    }
-
     public int getLocationX() {
         return locationX;
     }
@@ -31,11 +27,11 @@ public class Location {
     }
 
     public void turnLeft() {
-        this.setDirection(getLeftTurnMapping().get(direction));
+        this.direction = getLeftTurnMapping().get(direction);
     }
 
     public void turnRight() {
-        this.setDirection(getRightTurnMapping().get(direction));
+        this.direction = getRightTurnMapping().get(direction);
     }
 
     public void moveForward() {
