@@ -3,7 +3,6 @@ package com.afs.tdd;
 import java.util.Arrays;
 
 public class MarsRover {
-
     private Location location;
 
     public MarsRover(int locationX, int locationY, String direction) {
@@ -25,7 +24,7 @@ public class MarsRover {
     public void changeDirection(String changeDirection) {
         if (changeDirection.equals(MarsRoverConstant.COMMAND_LEFT)) {
             turnLeft();
-        } else if (changeDirection.equals(MarsRoverConstant.COMMAND_RIGHT)){
+        } else if (changeDirection.equals(MarsRoverConstant.COMMAND_RIGHT)) {
             turnRight();
         }
     }
@@ -54,16 +53,15 @@ public class MarsRover {
         }
     }
 
-
     public void moveForward() {
         if (location.getDirection().equals(MarsRoverConstant.DIRECTION_NORTH)) {
-            location.setLocationY(location.getLocationY()+1);
+            location.setLocationY(location.getLocationY() + 1);
         } else if (location.getDirection().equals(MarsRoverConstant.DIRECTION_WEST)) {
-            location.setLocationX(location.getLocationX()-1);
+            location.setLocationX(location.getLocationX() - 1);
         } else if (location.getDirection().equals(MarsRoverConstant.DIRECTION_SOUTH)) {
-            location.setLocationY(location.getLocationY()-1);
+            location.setLocationY(location.getLocationY() - 1);
         } else {
-            location.setLocationX(location.getLocationX()+1);
+            location.setLocationX(location.getLocationX() + 1);
         }
     }
 

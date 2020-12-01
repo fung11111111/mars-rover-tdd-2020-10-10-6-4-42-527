@@ -1,6 +1,5 @@
 package com.afs.tdd;
 
-
 public class Location {
     private int locationX;
     private int locationY;
@@ -11,7 +10,7 @@ public class Location {
         this.locationY = locationY;
         this.direction = direction;
     }
-// rename method and add locationx before pass in
+
     public void setLocationX(int locationX) {
         this.locationX = locationX;
     }
