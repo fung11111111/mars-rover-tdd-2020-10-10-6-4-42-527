@@ -6,9 +6,9 @@ import java.util.Map;
 public class Location {
     private int locationX;
     private int locationY;
-    private Direction direction;
+    private String direction;
 
-    public Location(int locationX, int locationY, Direction direction) {
+    public Location(int locationX, int locationY, String direction) {
         this.locationX = locationX;
         this.locationY = locationY;
         this.direction = direction;
@@ -22,7 +22,7 @@ public class Location {
         return locationY;
     }
 
-    public Direction getDirection() {
+    public String getDirection() {
         return direction;
     }
 
@@ -38,30 +38,30 @@ public class Location {
         this.getMoveForwardMapping().get(direction).run();
     }
 
-    private Map<Direction, Direction> getLeftTurnMapping() {
-        Map<Direction, Direction> turnLeftMap = new HashMap<>();
-        turnLeftMap.put(Direction.EAST, Direction.NORTH);
-        turnLeftMap.put(Direction.WEST, Direction.SOUTH);
-        turnLeftMap.put(Direction.SOUTH, Direction.EAST);
-        turnLeftMap.put(Direction.NORTH, Direction.WEST);
+    private Map<String, String> getLeftTurnMapping() {
+        Map<String, String> turnLeftMap = new HashMap<>();
+        turnLeftMap.put(MarsRoverConstant.DIRECTION_EAST, MarsRoverConstant.DIRECTION_NORTH);
+        turnLeftMap.put(MarsRoverConstant.DIRECTION_WEST, MarsRoverConstant.DIRECTION_SOUTH);
+        turnLeftMap.put(MarsRoverConstant.DIRECTION_SOUTH, MarsRoverConstant.DIRECTION_EAST);
+        turnLeftMap.put(MarsRoverConstant.DIRECTION_NORTH, MarsRoverConstant.DIRECTION_WEST);
         return turnLeftMap;
     }
 
-    private Map<Direction, Direction> getRightTurnMapping() {
-        Map<Direction, Direction> turnRightMap = new HashMap<>();
-        turnRightMap.put(Direction.EAST, Direction.SOUTH);
-        turnRightMap.put(Direction.WEST, Direction.NORTH);
-        turnRightMap.put(Direction.SOUTH, Direction.WEST);
-        turnRightMap.put(Direction.NORTH, Direction.EAST);
+    private Map<String, String> getRightTurnMapping() {
+        Map<String, String> turnRightMap = new HashMap<>();
+        turnRightMap.put(MarsRoverConstant.DIRECTION_EAST, MarsRoverConstant.DIRECTION_SOUTH);
+        turnRightMap.put(MarsRoverConstant.DIRECTION_WEST, MarsRoverConstant.DIRECTION_NORTH);
+        turnRightMap.put(MarsRoverConstant.DIRECTION_SOUTH, MarsRoverConstant.DIRECTION_WEST);
+        turnRightMap.put(MarsRoverConstant.DIRECTION_NORTH, MarsRoverConstant.DIRECTION_EAST);
         return turnRightMap;
     }
 
-    private Map<Direction, Runnable> getMoveForwardMapping() {
-        Map<Direction, Runnable> moveForwardMap = new HashMap<>();
-        moveForwardMap.put(Direction.EAST, () -> this.locationX++);
-        moveForwardMap.put(Direction.WEST, () -> this.locationX--);
-        moveForwardMap.put(Direction.SOUTH, () -> this.locationY--);
-        moveForwardMap.put(Direction.NORTH, () -> this.locationY++);
+    private Map<String, Runnable> getMoveForwardMapping() {
+        Map<String, Runnable> moveForwardMap = new HashMap<>();
+        moveForwardMap.put(MarsRoverConstant.DIRECTION_EAST, () -> this.locationX++);
+        moveForwardMap.put(MarsRoverConstant.DIRECTION_WEST, () -> this.locationX--);
+        moveForwardMap.put(MarsRoverConstant.DIRECTION_SOUTH, () -> this.locationY--);
+        moveForwardMap.put(MarsRoverConstant.DIRECTION_NORTH, () -> this.locationY++);
         return moveForwardMap;
     }
 }
