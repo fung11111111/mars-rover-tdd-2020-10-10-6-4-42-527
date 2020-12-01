@@ -3,9 +3,9 @@ package com.afs.tdd;
 public class Location {
     private int locationX;
     private int locationY;
-    private String direction;
+    private Direction direction;
 
-    public Location(int locationX, int locationY, String direction) {
+    public Location(int locationX, int locationY, Direction direction) {
         this.locationX = locationX;
         this.locationY = locationY;
         this.direction = direction;
@@ -19,7 +19,7 @@ public class Location {
         this.locationY = locationY;
     }
 
-    public void setDirection(String direction) {
+    public void setDirection(Direction direction) {
         this.direction = direction;
     }
 
@@ -31,7 +31,7 @@ public class Location {
         return locationY;
     }
 
-    public String getDirection() {
+    public Direction getDirection() {
         return direction;
     }
 

@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class MarsRover {
     private Location location;
 
-    public MarsRover(int locationX, int locationY, String direction) {
+    public MarsRover(int locationX, int locationY, Direction direction) {
         location = new Location(locationX, locationY, direction);
     }
 
@@ -30,35 +30,35 @@ public class MarsRover {
     }
 
     public void turnLeft() {
-        if (location.getDirection().equals(MarsRoverConstant.DIRECTION_NORTH)) {
-            location.setDirection(MarsRoverConstant.DIRECTION_WEST);
-        } else if (location.getDirection().equals(MarsRoverConstant.DIRECTION_WEST)) {
-            location.setDirection(MarsRoverConstant.DIRECTION_SOUTH);
-        } else if (location.getDirection().equals(MarsRoverConstant.DIRECTION_SOUTH)) {
-            location.setDirection(MarsRoverConstant.DIRECTION_EAST);
+        if (location.getDirection().equals(Direction.NORTH)) {
+            location.setDirection(Direction.WEST);
+        } else if (location.getDirection().equals(Direction.WEST)) {
+            location.setDirection(Direction.SOUTH);
+        } else if (location.getDirection().equals(Direction.SOUTH)) {
+            location.setDirection(Direction.EAST);
         } else {
-            location.setDirection(MarsRoverConstant.DIRECTION_NORTH);
+            location.setDirection(Direction.NORTH);
         }
     }
 
     public void turnRight() {
-        if (location.getDirection().equals(MarsRoverConstant.DIRECTION_NORTH)) {
-            location.setDirection(MarsRoverConstant.DIRECTION_EAST);
-        } else if (location.getDirection().equals(MarsRoverConstant.DIRECTION_WEST)) {
-            location.setDirection(MarsRoverConstant.DIRECTION_NORTH);
-        } else if (location.getDirection().equals(MarsRoverConstant.DIRECTION_SOUTH)) {
-            location.setDirection(MarsRoverConstant.DIRECTION_WEST);
+        if (location.getDirection().equals(Direction.NORTH)) {
+            location.setDirection(Direction.EAST);
+        } else if (location.getDirection().equals(Direction.WEST)) {
+            location.setDirection(Direction.NORTH);
+        } else if (location.getDirection().equals(Direction.SOUTH)){
+            location.setDirection(Direction.WEST);
         } else {
-            location.setDirection(MarsRoverConstant.DIRECTION_SOUTH);
+            location.setDirection(Direction.SOUTH);
         }
     }
 
     public void moveForward() {
-        if (location.getDirection().equals(MarsRoverConstant.DIRECTION_NORTH)) {
+        if (location.getDirection().equals(Direction.NORTH)) {
             location.setLocationY(location.getLocationY() + 1);
-        } else if (location.getDirection().equals(MarsRoverConstant.DIRECTION_WEST)) {
+        } else if (location.getDirection().equals(Direction.WEST)) {
             location.setLocationX(location.getLocationX() - 1);
-        } else if (location.getDirection().equals(MarsRoverConstant.DIRECTION_SOUTH)) {
+        } else if (location.getDirection().equals(Direction.SOUTH)) {
             location.setLocationY(location.getLocationY() - 1);
         } else {
             location.setLocationX(location.getLocationX() + 1);
@@ -73,7 +73,7 @@ public class MarsRover {
         return location.getLocationY();
     }
 
-    public String getDirection() {
+    public Direction getDirection() {
         return location.getDirection();
     }
 }
