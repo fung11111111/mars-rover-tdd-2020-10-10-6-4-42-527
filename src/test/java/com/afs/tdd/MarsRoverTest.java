@@ -102,20 +102,21 @@ class MarsRoverTest {
 
     }
 
-//    @Test
-//    void should_return_y_minus_1_when_executeCommand_given_00S_M() {
-//        //given
-//        MarsRover marsRover = new MarsRover(0, 0, Direction.SOUTH);
-//        //when
-//        marsRover.executeCommands("M");
-//
-//        //then
-//        assertEquals(0, marsRover.getLocationX());
-//        assertEquals(-1, marsRover.getLocationY());
-//        assertEquals(Direction.SOUTH, marsRover.getDirection());
-//
-//    }
-//
+    @Test
+    void should_return_y_minus_1_when_invoker_execute_given_invoker_marsrover_00S_M() {
+        //given
+        MarsRover marsRover = new MarsRover(0, 0, Direction.SOUTH);
+        Invoker invoker = new Invoker(marsRover);
+        //when
+        invoker.receiveCommand(MarsRoverConstant.COMMAND_MOVE);
+        invoker.execute();
+
+        //then
+        assertEquals(0, marsRover.getLocationX());
+        assertEquals(-1, marsRover.getLocationY());
+        assertEquals(Direction.SOUTH, marsRover.getDirection());
+    }
+
 //    @Test
 //    void should_return_E_when_executeCommand_given_00S_L() {
 //        //given
