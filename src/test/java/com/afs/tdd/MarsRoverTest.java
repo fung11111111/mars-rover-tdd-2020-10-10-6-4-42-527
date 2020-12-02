@@ -1,13 +1,14 @@
 package com.afs.tdd;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
 class MarsRoverTest {
+    public static final String TEST_COMMANDS_MLMR = "MLMR";
 
     @Test
-    void should_return_y_plus_1_when_invoker_execute_given_invoker_marsrover_00N_M() {
+    void should_return_y_plus_1_when_invoker_execute_given_invoker_mars_rover_00N_M() {
         //given
         MarsRover marsRover = new MarsRover(0, 0, MarsRoverConstant.DIRECTION_NORTH);
         Invoker invoker = new Invoker(marsRover);
@@ -23,7 +24,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_return_W_when_invoker_execute_given_invoker_marsrover_00N_L() {
+    void should_return_W_when_invoker_execute_given_invoker_mars_rover_00N_L() {
         //given
         MarsRover marsRover = new MarsRover(0, 0, MarsRoverConstant.DIRECTION_NORTH);
         Invoker invoker = new Invoker(marsRover);
@@ -198,7 +199,8 @@ class MarsRoverTest {
         assertEquals(MarsRoverConstant.DIRECTION_SOUTH, marsRover.getDirection());
     }
 
-
+    //invoker shd only receive command
+    // spilt command shd be on client
     @Test
     void should_return_minus_11N_when_invoker_execute_given_invoker_marsrover_00N_MLMR() {
         //given
@@ -206,7 +208,7 @@ class MarsRoverTest {
         Invoker invoker = new Invoker(marsRover);
 
         //when
-        invoker.receiveCommand(MarsRoverConstant.TESTCOMMANDS_MLMR);
+        invoker.receiveCommand(TEST_COMMANDS_MLMR);
         invoker.execute();
 
         //then

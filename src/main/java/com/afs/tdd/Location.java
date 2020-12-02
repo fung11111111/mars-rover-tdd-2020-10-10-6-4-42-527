@@ -26,15 +26,16 @@ public class Location {
         return direction;
     }
 
-    public void turnLeft() {
+    // rename
+    public void leftDirection() {
         this.direction = getLeftTurnMapping().get(direction);
     }
 
-    public void turnRight() {
+    public void rightDirection() {
         this.direction = getRightTurnMapping().get(direction);
     }
 
-    public void moveForward() {
+    public void nextCoordinate() {
         this.getMoveForwardMapping().get(direction).run();
     }
 

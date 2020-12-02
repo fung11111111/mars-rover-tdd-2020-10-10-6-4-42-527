@@ -12,6 +12,7 @@ public class Invoker {
         commands = new ArrayList<>();
     }
 
+    // shd only receiveCommand
     public void receiveCommand(String commands) {
         Arrays.asList(commands.split("")).forEach(command -> {
             switch (command){
